@@ -1262,9 +1262,9 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
         scope.$apply(function() {
           var processed = false;
           // var tagged = false; //Checkme
-          if(KEY.isHorizontalMovement(key)){
-            processed = _handleMatchSelection(key);
-          }
+          // if(KEY.isHorizontalMovement(key)){
+          //   processed = _handleMatchSelection(key);
+          // }
           if (processed  && key != KEY.TAB) {
             //TODO Check si el tab selecciona aun correctamente
             //Crear test
