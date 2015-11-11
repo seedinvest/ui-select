@@ -1071,9 +1071,7 @@ uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
     },
     link: function(scope, element, attrs, $select) {
       $select.lockChoiceExpression = attrs.uiLockChoice;
-      attrs.$observe('placeholder', function(placeholder) {
-        $select.placeholder, uiSelectConfig.placeholder = placeholder !== undefined ? placeholder : uiSelectConfig.placeholder;
-      });
+      $select.placeholder, uiSelectConfig.placeholder = attrs.placeholder !== undefined ? attrs.placeholder : uiSelectConfig.placeholder;
 
       function setAllowClear(allow) {
         $select.allowClear = (angular.isDefined(allow)) ? (allow === '') ? true : (allow.toLowerCase() === 'true') : false;
