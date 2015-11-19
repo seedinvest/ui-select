@@ -313,7 +313,7 @@ uis.controller('uiSelectCtrl',
     if (!ctrl.disabled  && !ctrl.open) {
       if(!avoidReset) _resetSearchInput();
 
-      ctrl.placeholder = uiSelectConfig.placeholder;
+      ctrl.placeholder = $scope.$parent.placeholder;
 
       $scope.$broadcast('uis:activate');
 
@@ -1071,7 +1071,7 @@ uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
     },
     link: function(scope, element, attrs, $select) {
       $select.lockChoiceExpression = attrs.uiLockChoice;
-      $select.placeholder, uiSelectConfig.placeholder = attrs.placeholder !== undefined ? attrs.placeholder : uiSelectConfig.placeholder;
+      $select.placeholder = attrs.placeholder !== undefined ? attrs.placeholder : uiSelectConfig.placeholder;
 
       function setAllowClear(allow) {
         $select.allowClear = (angular.isDefined(allow)) ? (allow === '') ? true : (allow.toLowerCase() === 'true') : false;
