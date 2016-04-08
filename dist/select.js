@@ -553,7 +553,7 @@ uis.controller('uiSelectCtrl',
     ctrl.open = false;
 
     $scope.$broadcast('uis:close', skipFocusser);
-    ctrl.placeholder = '';
+    // ctrl.placeholder = '';
 
   };
 
